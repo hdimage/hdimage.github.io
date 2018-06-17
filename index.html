@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="default">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-test" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/17/test/" class="article-date">
+  <time datetime="2018-06-17T07:19:57.000Z" itemprop="datePublished">2018-06-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/17/test/">test</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/06/17/test/" data-id="cjiiiyivh0001fktbb3v3g88x" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-whyTensorFlow" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/17/whyTensorFlow/" class="article-date">
+  <time datetime="2018-06-17T07:19:13.401Z" itemprop="datePublished">2018-06-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Why TensorFlow?<br>=<br>下面将对比一下比较流行的几个深度学习框架，分别是Caffe、Theano、PyTorch、Tensorflow和Keras。希望能有利于你选用框架。</p>
+<p>1.Caffe<br>=<br>第一个主流的生产级的深度学习库，始于2014年加州大学伯克利分校。</p>
+<p>##优点</p>
+<ul>
+<li>快速</li>
+<li>支持GPU</li>
+<li>良好的Matlab和Python接口<br>##缺点</li>
+<li>不灵活。在Caffe中，每个节点都被视为一个层，如果想要定义一个新类型的层，要定义全部的前向、反向和梯度更新。这些层是构件块，而这里有无限的可供挑选的块列表（在Tensorflow中，每个节点都被视为张量运算，如矩阵加、乘或卷积。因此Tensorflow的构件块可以实现更多的模块化）。</li>
+<li>有很多冗余是不必要的。如果你想同时支持CPU和GPU，需要为每一种方案提供额外的实现。你还需要使用纯文本编辑器来自定义你的模型。实在是令人头疼！几乎每个人都更喜欢以编程的方式来定义模型，因为这样更方便不同组件之间的模块化。更有趣的是Caffe的主架构师现在在Tensorflow团队工作！</li>
+<li>框架并不通用，比较专注于计算机视觉（但这方面表示确实不错）。</li>
+<li>不是用Python编写的。如果需要添加新的改动，需要自己手工用C++和CUDA编程（对小改动，可以用Python或者Matlab的结构）。</li>
+<li>文档内容不怎样。</li>
+<li>安装有点难，有很多依赖需要解决。</li>
+<li>只接收少数的输入格式，只有一种输出格式，HDF5（虽然可以使用它的Python/C++/Matlab接口来运行，并从哪里获得输出数据）。</li>
+<li>对Recurrent Networks的支持并不友好</li>
+</ul>
+<p>2.Theano<br>=<br>由蒙特利尔大学研究小组建立。在Theano之上建立了许多深度学习库，包括Keras、Lasagne和Blocks。Yoshua Bengio于2017年9月28日宣布，Theano将停止发展。 所以Theano实际上已经死了。</p>
+<p>##优点</p>
+<ul>
+<li>计算图这个抽象概念非常好（和Tensorflow一样）</li>
+<li>针对CPU和GPU进行了优化</li>
+<li>非常适合数值优化任务</li>
+<li>高级的封装（如Keras，Lasagne）缓解了种种蛋疼<br>##缺点</li>
+<li>原生的Theano用了很老旧的低级API<blockquote>
+<p>import numpy<br>for _ in range(T):<br>   h=torch.matmul(W,h)+b</p>
+</blockquote>
+</li>
+<li>模型比较大的时候编译时间很长</li>
+<li>不支持多路GPU</li>
+<li>提供的错误信息有时候并没有什么帮助</li>
+</ul>
+<p>3.Pytorch<br>=<br>2017年1月Facebook开源Torch库的Python版本（由Lua编写）。</p>
+<p>##优点</p>
+<ul>
+<li>提供了动态的计算图（也就是运行时才建立），允许你提供可变长度的输入和输出，对于RNNs非常有用。</li>
+<li>在PyTorch中，可以用标准的Python语法编写for循环结构</li>
+<li>大量的预训练的模型</li>
+<li>很多非常容易结合的模块组件</li>
+<li>非常容易就可以编写自己的层类型以及在GPU上运行</li>
+<li>Losswise是PyTorch中类似Tensorflow中的Tensorboard，并且提供了很多Tensorboard中没有的杀手级特征<br>##缺点</li>
+<li>除了官方文档，相关的参考资源比较少</li>
+<li>商业支持不够</li>
+</ul>
+<p>4.Tensorflow<br>=<br>是低级计算库，如Theano以及Blocks和Lasagne这样的更高级别的网络规范库的混合</p>
+<p>##优点</p>
+<ul>
+<li>由谷歌开发和维护，所以其支持和发展有比较好的保障</li>
+<li>非常庞大和活跃的社区</li>
+<li>有低级和高级的网络训练接口</li>
+<li>Tensorboard是非常强大的可视化套件，可以记录网络的拓扑和表现，让调试更加简单</li>
+<li>是用Python编写的（有部分非常重要的接口是C++写的），这语言还是非常有吸引力的</li>
+<li>支持多GPU。可以自由地在不同的机器上运行，无需停止或者重启程序。</li>
+<li>模型的编辑比基于Theano的框架快</li>
+<li>编译速度也比Theano快</li>
+<li>不仅仅是深度学习，事实上它还有很多支持增强学习及其他算法的工具<br>##缺点</li>
+<li>计算图是纯Python写的，所以有点慢</li>
+<li>计算图是静态的，意味着在运行前图就已经“编译好了”</li>
+</ul>
+<p>5.Keras<br>=<br>级别更高，很多用户友好的API，具有可以配置的后端。是由Google Brain团体成员Francis Chollet编写和维护。（其实这里的级别我认为就是Python和C这两种语言的关系，一个更为抽象，功能的调用比较简洁，而一个更为底层，要考虑更多）</p>
+<p>##优点</p>
+<ul>
+<li>提供高级别的API来构建深度学习模型，非常容易读懂和使用</li>
+<li>很好的文档支持</li>
+<li>庞大、活跃的社区</li>
+<li>调用了其他深度学习库（如Theano和Tensorflow，可以配置）</li>
+<li>提供了面向对象的设计，一切都是对象（如层、参数、优化器等），所以所有的模型参数都可以通过对象的性质获取<br>例如：<br>model.layers[3].output可以得到模型的第三层<br>model.layers[3].weights是一个象征权重张量的列表<br>##缺点</li>
+<li>因为它非常通用，所以表现也会有所欠缺</li>
+<li>当用Tensorflow后端（backend）的时候有性能问题（虽然本来就没有进行优化），不过当用Theano后端的时候，表现就还可以</li>
+<li>不如Tensorflow或者PyTroch那么灵活</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/06/17/whyTensorFlow/" data-id="cjiiiyivl0002fktbuao0rwzp" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/17/hello-world/" class="article-date">
+  <time datetime="2018-06-17T07:10:48.610Z" itemprop="datePublished">2018-06-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/17/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/06/17/hello-world/" data-id="cjiiiyiv90000fktbcfw0ilql" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/06/17/test/">test</a>
+          </li>
+        
+          <li>
+            <a href="/2018/06/17/whyTensorFlow/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/06/17/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
